@@ -4,8 +4,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "openzeppelin-solidity/contracts/utils/Address.sol";
-
-import "openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol";
+import "openzeppelin-solidity/contracts/security/ReentrancyGuard.sol";
 
 
 contract Staking is Ownable, ReentrancyGuard {
@@ -125,10 +124,10 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint256 private constant _DECIMALS = 18;
 
-    uint256 private constant _INTEREST_PERIOD = 1 days;    //One Month
-    uint256 private constant _INTEREST_VALUE = 333;    //0.333% per day
+    uint256 private constant _INTEREST_PERIOD = 365 days;    //One Month
+    uint256 private constant _INTEREST_VALUE = 1;    //0.333% per day
 
-    uint256 private constant _PENALTY_VALUE = 20;    //20% of the total stake
+    uint256 private constant _PENALTY_VALUE = 100;    //20% of the total stake
 
 
 
